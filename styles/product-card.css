@@ -62,7 +62,7 @@
 
 .product-card__image {
   border-radius: var(--radius-img);
-  border: var(--border-thin) solid var(--color-border); 
+  border: var(--border-thin) solid var(--color-border);
   width: 70%;
   max-width: 500px;
   height: auto;
@@ -102,10 +102,6 @@
   transition: clip-path var(--transition);
 }
 
-.product-card__category:hover::after {
-  clip-path: inset(0 0 0 0);
-}
-
 /* Группа вариантов фасовки */
 .product-card__variants {
   border: none;
@@ -134,11 +130,6 @@
     background-color var(--transition),
     box-shadow var(--transition);
   background-color: transparent;
-}
-
-.product-card__variant:hover {
-  border-color: var(--color-primary);
-  background-color: var(--color-primary-alpha-5);
 }
 
 /* Выбранный вариант фасовки */
@@ -252,13 +243,6 @@
   display: none;
 }
 
-.product-card__cart-btn:hover {
-  color: var(--color-text);
-  background-color: var(--color-accent);
-  transform: var(--lift-hover);
-  box-shadow: var(--shadow-btn-hover);
-}
-
 .product-card__cart-btn:focus-visible {
   outline: var(--border-btn) solid var(--color-focus);
   outline-offset: var(--border-btn);
@@ -289,13 +273,6 @@
 .product-card__cart-btn--added
   .product-card__cart-btn-svg[data-icon="cart-done"] {
   display: block;
-}
-
-/* Hover для состояния "В корзине" */
-.product-card__cart-btn--added:hover {
-  color: var(--color-primary-hover);
-  box-shadow: var(--shadow-btn-hover);
-  transform: var(--lift-hover-small);
 }
 
 /* Эффект нажатия для состояния "В корзине" */
@@ -341,8 +318,35 @@
   transition: clip-path var(--transition-slow);
 }
 
-.product-card__description-link:hover::after {
-  clip-path: inset(0 0 0 0);
+/* Ховер-эффекты только для устройств с курсором: 
+   на тач-экранах эти стили не применяются */
+@media (hover: hover) {
+  .product-card__category:hover::after {
+    clip-path: inset(0 0 0 0);
+  }
+
+  .product-card__variant:hover {
+    border-color: var(--color-primary);
+    background-color: var(--color-primary-alpha-5);
+  }
+
+  .product-card__cart-btn:hover {
+    color: var(--color-text);
+    background-color: var(--color-accent);
+    transform: var(--lift-hover);
+    box-shadow: var(--shadow-btn-hover);
+  }
+
+  /* Hover для состояния "В корзине" */
+  .product-card__cart-btn--added:hover {
+    color: var(--color-primary-hover);
+    box-shadow: var(--shadow-btn-hover);
+    transform: var(--lift-hover-small);
+  }
+
+  .product-card__description-link:hover::after {
+    clip-path: inset(0 0 0 0);
+  }
 }
 
 /* Планшет и небольшие ноутбуки */
