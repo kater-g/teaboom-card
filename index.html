@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <title>Ананасовый улун — Teaboom</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" >
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin >
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap"
+      rel="stylesheet"
+    >
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zen+Antique&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="icon" href="assets/favicon.svg" >
+    <link rel="stylesheet" href="styles/main.css" >
+  </head>
+  <body>
+    <main class="page">
+      <article
+        class="product-card"
+        itemscope
+        itemtype="https://schema.org/Product"
+        data-product-id="1"
+      >
+        <h1 class="product-card__title" itemprop="name">Ананасовый улун</h1>
+
+        <div class="product-card__layout">
+          <figure class="product-card__media">
+            <img
+              class="product-card__image"
+              src="assets/pineapple_ulun.jpg"
+              alt="Ананасовый улун — китайский ароматизированный чай"
+              itemprop="image"
+              width="600"
+              height="600"
+            >
+          </figure>
+
+          <div class="product-card__info">
+            <a class="product-card__category" href="#" itemprop="category">
+              Улун
+            </a>
+
+            <fieldset class="product-card__variants">
+              <legend class="visually-hidden">Выберите фасовку</legend>
+              <div
+                class="product-card__variants-list"
+                data-variants-container
+              ></div>
+            </fieldset>
+
+            <div class="product-card__summary" aria-live="polite">
+              <div class="product-card__summary-row">
+                <span class="product-card__summary-label">Артикул:</span>
+                <span
+                  class="product-card__summary-value"
+                  data-active-article
+                ></span>
+              </div>
+              <div
+                class="product-card__summary-row product-card__summary-row--price"
+              >
+                <del
+                  class="product-card__summary-old-price"
+                  data-active-old-price
+                  hidden
+                ></del>
+                <span
+                  class="product-card__summary-price"
+                  data-active-price
+                ></span>
+              </div>
+            </div>
+
+            <button
+              class="product-card__cart-btn"
+              type="button"
+              data-cart-btn
+              aria-pressed="false"
+            >
+              <span class="product-card__cart-btn-text" data-cart-label>В корзину</span>
+              <svg
+                class="product-card__cart-btn-svg"
+                data-icon="cart-add"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="252 244 32 32"
+                fill="currentColor"
+                focusable="false"
+                aria-hidden="true"
+              >
+                <path
+                  d="m 261,268.00586 c -1.64501,0 -3,1.35499 -3,3 0,1.64501 1.35499,3 3,3 1.64501,0 3,-1.35499 3,-3 0,-1.64501 -1.35499,-3 -3,-3 z m 0,2 c 0.56413,0 1,0.43587 1,1 0,0.56413 -0.43587,1 -1,1 -0.56413,0 -1,-0.43587 -1,-1 0,-0.56413 0.43587,-1 1,-1 z"
+                />
+                <path
+                  d="m 275,268.00586 c -1.64501,0 -3,1.35499 -3,3 0,1.64501 1.35499,3 3,3 1.64501,0 3,-1.35499 3,-3 0,-1.64501 -1.35499,-3 -3,-3 z m 0,2 c 0.56413,0 1,0.43587 1,1 0,0.56413 -0.43587,1 -1,1 -0.56413,0 -1,-0.43587 -1,-1 0,-0.56413 0.43587,-1 1,-1 z"
+                />
+                <path
+                  d="m 255,246.00586 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 1.17969 l 2.65039,13.24219 C 257.7593,261.70823 257,262.77542 257,264.00586 c 0,1.6447 1.3553,3 3,3 h 17 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 h -17 c -0.5713,0 -1,-0.4287 -1,-1 0,-0.5713 0.4287,-1 1,-1 h 15 A 1,1 0 0 0 275.0293,263 H 278 a 1.0001,1.0001 0 0 0 0.98828,-0.84375 l 0.93945,-5.96875 a 1,1 0 0 0 -0.83203,-1.14453 1,1 0 0 0 -1.14453,0.83398 L 277.14453,261 h -16.32422 l -1.80078,-8.99414 h 12.08399 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 h -12.48438 l -0.63867,-3.19531 A 1.0001,1.0001 0 0 0 257,246.00586 Z"
+                />
+                <path
+                  d="m 276,246.00586 c -3.30186,0 -6,2.69814 -6,6 0,3.30186 2.69814,6 6,6 3.30186,0 6,-2.69814 6,-6 0,-3.30186 -2.69814,-6 -6,-6 z m 0,2 c 2.22098,0 4,1.77902 4,4 0,2.22098 -1.77902,4 -4,4 -2.22098,0 -4,-1.77902 -4,-4 0,-2.22098 1.77902,-4 4,-4 z"
+                />
+                <path
+                  d="m 276,249.00586 a 1,1 0 0 0 -1,1 v 1 h -1 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 1 v 1 a 1,1 0 0 0 1,1 1,1 0 0 0 1,-1 v -1 h 1 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 h -1 v -1 a 1,1 0 0 0 -1,-1 z"
+                />
+              </svg>
+              <svg
+                class="product-card__cart-btn-svg"
+                data-icon="cart-done"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="-36 292 32 32"
+                fill="currentColor"
+                focusable="false"
+                aria-hidden="true"
+              >
+                <path
+                  d="m -27,316.00586 c -1.645008,0 -3,1.35499 -3,3 0,1.64501 1.354992,3 3,3 1.645008,0 3,-1.35499 3,-3 0,-1.64501 -1.354992,-3 -3,-3 z m 0,2 c 0.564129,0 1,0.43587 1,1 0,0.56413 -0.435871,1 -1,1 -0.564129,0 -1,-0.43587 -1,-1 0,-0.56413 0.435871,-1 1,-1 z"
+                />
+                <path
+                  d="m -13,316.00586 c -1.645008,0 -3,1.35499 -3,3 0,1.64501 1.354992,3 3,3 1.645008,0 3,-1.35499 3,-3 0,-1.64501 -1.354992,-3 -3,-3 z m 0,2 c 0.564129,0 1,0.43587 1,1 0,0.56413 -0.435871,1 -1,1 -0.564129,0 -1,-0.43587 -1,-1 0,-0.56413 0.435871,-1 1,-1 z"
+                />
+                <path
+                  d="m -12,294.00586 c -3.30186,0 -6,2.69814 -6,6 0,3.30186 2.69814,6 6,6 3.30186,0 6,-2.69814 6,-6 0,-3.30186 -2.69814,-6 -6,-6 z m 0,2 c 2.2209809,0 4,1.77902 4,4 0,2.22098 -1.7790191,4 -4,4 -2.220981,0 -4,-1.77902 -4,-4 0,-2.22098 1.779019,-4 4,-4 z"
+                />
+                <path
+                  d="m -9.8984375,298.01172 a 1,1 0 0 0 -0.7343755,0.21875 l -2.029296,1.65625 -0.65625,-0.61133 a 1,1 0 0 0 -1.41211,0.0488 1,1 0 0 0 0.04883,1.41211 l 1.292969,1.20898 a 1.0001,1.0001 0 0 0 1.3125,0.043 l 2.7089845,-2.20703 a 1,1 0 0 0 0.1425781,-1.40625 1,1 0 0 0 -0.6738281,-0.36328 z"
+                />
+                <path
+                  d="m -32.95117,294 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 1.17969 l 2.65039,13.24219 c -1.07078,0.46018 -1.83008,1.52737 -1.83008,2.75781 0,1.6447 1.3553,3 3,3 h 17 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 h -17 c -0.5713,0 -1,-0.4287 -1,-1 0,-0.5713 0.4287,-1 1,-1 h 15 a 1,1 0 0 0 0.0293,-0.006 h 2.9707 a 1.0001,1.0001 0 0 0 0.98828,-0.84375 l 0.93945,-5.96875 A 1,1 0 0 0 -8.85547,303.03697 1,1 0 0 0 -10,303.87095 l -0.80664,5.12319 H -27.13086 L -28.93164,300 h 12.08399 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 h -12.48438 l -0.63867,-3.19531 A 1.0001,1.0001 0 0 0 -30.95117,294 Z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="product-card__description" itemprop="description">
+          <h2 class="product-card__description-title">О товаре</h2>
+          <p>
+            Состав: китайский бирюзовый чай, цукаты, натуральные ароматические
+            масла.
+          </p>
+          <p>
+            Светлый Фуцзяньский улун с ароматом ананаса. В сухом виде — красивый
+            крупный лист изумрудного цвета, скруткой листа напоминающий Те Гуань
+            Инь. В прогретой посуде аромат свежей, весенней зелени и спелого
+            ананаса. Скрученный лист медленно раскрывается, отдавая весь свой
+            аромат. Тем, кому пришёлся по вкусу этот чай, может также
+            понравиться <a class="product-card__description-link" href="#">связанный чай «Ананасовый рай»</a>.
+          </p>
+        </div>
+      </article>
+    </main>
+    <script src="scripts/main.js"></script>
+  </body>
+</html>

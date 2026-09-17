@@ -1,0 +1,65 @@
+:root {
+  --font-heading: 'Zen Antique', 'Times New Roman', serif;
+  --font-body: 'Source Serif 4', Georgia, serif;
+
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 24px;
+  --font-size-xl: 28px;
+  --font-size-xxl: 32px;
+  
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  --line-height-body: 1.6;
+  --letter-spacing-wide: 0.5px;
+
+  --color-primary: #4a7c59;
+  --color-primary-hover: #3d6a4b;
+  --color-primary-alpha-11: rgba(74, 124, 89, 0.11);
+  --color-primary-alpha-5: rgba(74, 124, 89, 0.05);
+  
+  --color-accent: #dcc88e;
+  --color-text: #1a1a1a;
+  --color-text-muted: #666;
+  --color-border: #d2cbcb;
+  --color-bg: #fff;
+  --color-bg-light: #fbf5db;
+  --color-sale: #e74c3c;
+  --color-white: #ffffff;
+  --color-focus: #3a4d21;
+
+  --spacing-xxs: 2px;
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 20px;
+  --spacing-lg: 32px;
+  --spacing-xl: 48px;
+  --page-padding-x: 15px;
+
+  --container-max: 1200px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-img: 10%;
+  --border-thin: 1px;
+  --border-btn: 2px;
+
+  --shadow-card: 0 4px 8px rgba(0, 0, 0, 0.15);
+  --shadow-btn-hover: 0 4px 10px rgba(74, 124, 89, 0.5);
+  --shadow-btn-active: 0 2px 4px rgba(0, 0, 0, 0.15);
+  --shadow-selected: 0 0 0 1px var(--color-primary);
+  --overlay-bg: rgba(255, 255, 255, 0.93);
+
+  /*Состояние наведения*/
+  --lift-hover: translateY(-2px) translateX(-1px);
+  --lift-hover-small: translateY(-1px);
+  --press-active: translateY(0) scale(0.97);
+
+  /*Скорость анимации*/
+  --transition-slow: 0.5s ease;
+  --transition: 0.3s ease;
+  --transition-fast: 0.1s ease;
+}
