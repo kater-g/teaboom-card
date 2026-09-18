@@ -207,6 +207,50 @@
   color: var(--color-sale);
 }
 
+.product-card__cart-zone {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-sm);
+  align-items: center;
+  justify-content: center;
+}
+
+/* Счётчик */
+.product-card__count {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+/* Кнопки счётчика */
+.product-card__count-btn {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: var(--border-thin) solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  transition: background-color var(--transition);
+}
+
+.product-card__count-btn:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* Значение счётчика */
+.product-card__count-value {
+  min-width: 32px;
+  text-align: center;
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+}
+
 /* Кнопка «В корзину». Прозрачная рамка зарезервирована заранее,
    чтобы в состоянии «в корзине» размер кнопки не прыгал */
 .product-card__cart-btn {
@@ -249,7 +293,8 @@
 }
 
 /* Эффект нажатия на кнопку */
-.product-card__cart-btn:active {
+.product-card__cart-btn:active,
+.product-card__count-btn:active {
   transform: var(--press-active);
   transition:
     transform var(--transition-fast),
@@ -344,6 +389,10 @@
     transform: var(--lift-hover-small);
   }
 
+  .product-card__count-btn:hover {
+    background-color: var(--color-accent);
+  }
+
   .product-card__description-link:hover::after {
     clip-path: inset(0 0 0 0);
   }
@@ -417,6 +466,11 @@
   .product-card__variant {
     padding: var(--spacing-sm);
     justify-content: center;
+  }
+
+  .product-card__cart-zone:has(.product-card__count:not([hidden]))
+    .product-card__cart-btn {
+    width: auto;
   }
 
   .product-card__cart-btn {
