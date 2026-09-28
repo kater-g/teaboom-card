@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <title>Каталог товаров - Teaboom</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" >
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin >
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap"
+      rel="stylesheet"
+    >
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zen+Antique&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="icon" href="assets/favicon.svg" >
+    <link rel="stylesheet" href="styles/main.css" >
+  </head>
+  <body>
+    <main class="page">
+      <section class="cards-catalog">
+        <aside class="cards-catalog__filters" aria-label="Фильтры товаров">
+          <div class="catalog-filters">
+            <h2 class="catalog-filters__title">Фильтры</h2>
+
+            <form class="catalog-filters__form" data-filters-form>
+              <fieldset class="catalog-filters__group">
+                <legend class="catalog-filters__legend">Категория</legend>
+                <div class="catalog-filters__chips">
+                  <label class="catalog-filters__chip">
+                    <input
+                      class="catalog-filters__chip-input visually-hidden"
+                      type="checkbox"
+                      name="category"
+                      value="ulun"
+                      checked
+                    />
+                    <span class="catalog-filters__chip-body">Улун</span>
+                  </label>
+                  <label class="catalog-filters__chip">
+                    <input
+                      class="catalog-filters__chip-input visually-hidden"
+                      type="checkbox"
+                      name="category"
+                      value="green-tea"
+                    />
+                    <span class="catalog-filters__chip-body">Зелёный чай</span>
+                  </label>
+                  <label class="catalog-filters__chip">
+                    <input
+                      class="catalog-filters__chip-input visually-hidden"
+                      type="checkbox"
+                      name="category"
+                      value="black-tea"
+                    />
+                    <span class="catalog-filters__chip-body">Чёрный чай</span>
+                  </label>
+                  <label class="catalog-filters__chip">
+                    <input
+                      class="catalog-filters__chip-input visually-hidden"
+                      type="checkbox"
+                      name="category"
+                      value="white-tea"
+                    />
+                    <span class="catalog-filters__chip-body">Белый чай</span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <fieldset class="catalog-filters__group">
+                <legend class="catalog-filters__legend">Цена, ₽</legend>
+                <div class="catalog-filters__chips">
+                  <label class="catalog-filters__chip">
+                    <input
+                      class="catalog-filters__chip-input visually-hidden"
+                      type="checkbox"
+                      name="price"
+                      value="0-500"
+                    />
+                    <span class="catalog-filters__chip-body">до 500</span>
+                  </label>
+                  <label class="catalog-filters__chip">
+                    <input
+                      class="catalog-filters__chip-input visually-hidden"
+                      type="checkbox"
+                      name="price"
+                      value="500-1500"
+                    />
+                    <span class="catalog-filters__chip-body">500 — 1 500</span>
+                  </label>
+                  <label class="catalog-filters__chip">
+                    <input
+                      class="catalog-filters__chip-input visually-hidden"
+                      type="checkbox"
+                      name="price"
+                      value="1500-3000"
+                    />
+                    <span class="catalog-filters__chip-body"
+                      >1 500 — 3 000</span
+                    >
+                  </label>
+                  <label class="catalog-filters__chip">
+                    <input
+                      class="catalog-filters__chip-input visually-hidden"
+                      type="checkbox"
+                      name="price"
+                      value="3000+"
+                    />
+                    <span class="catalog-filters__chip-body">от 3 000</span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <fieldset class="catalog-filters__group">
+                <legend class="catalog-filters__legend">Скидка</legend>
+                <div class="catalog-filters__chips">
+                  <label class="catalog-filters__chip">
+                    <input
+                      class="catalog-filters__chip-input visually-hidden"
+                      type="checkbox"
+                      name="discount"
+                      value="on-sale"
+                    />
+                    <span class="catalog-filters__chip-body"
+                      >Только со скидкой</span
+                    >
+                  </label>
+                </div>
+              </fieldset>
+
+              <div class="catalog-filters__actions">
+                <button
+                  class="catalog-filters__btn catalog-filters__btn--primary"
+                  type="button"
+                  data-filters-apply
+                >
+                  Показать
+                </button>
+                <button
+                  class="catalog-filters__btn catalog-filters__btn--ghost"
+                  type="reset"
+                  data-filters-reset
+                >
+                  Сбросить
+                </button>
+              </div>
+            </form>
+          </div>
+        </aside>
+        <ul class="cards-catalog__list" data-products-container></ul>
+      </section>
+    </main>
+
+    <script src="data/products.js"></script>
+    <script src="scripts/shared.js"></script>
+    <script src="scripts/catalog.js"></script>
+  </body>
+</html>
