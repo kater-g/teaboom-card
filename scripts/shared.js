@@ -90,6 +90,33 @@ function setQty(variantId, qty) {
 }
 
 /*
+ * Обрабатывает клик по элементам корзины (кнопка, «+», «−»).
+ * Меняет количество в корзине для переданного варианта.
+ * Возвращает true, если клик относился к корзине.
+ */
+function applyCartAction(target, variantId) {
+  if (!(target instanceof Element)) return false;
+
+  const decrease = target.closest("[data-cart-count-decrease]");
+  const increase = target.closest("[data-cart-count-increase]");
+  const cartBtn = target.closest("[data-cart-btn]");
+
+  if (!decrease && !increase && !cartBtn) return false;
+
+  const qty = getQty(variantId);
+
+  if (decrease) {
+    setQty(variantId, qty - 1);
+  } else if (increase) {
+    setQty(variantId, qty + 1);
+  } else {
+    setQty(variantId, qty > 0 ? 0 : 1);
+  }
+
+  return true;
+}
+
+/*
  * Формирует HTML одного варианта фасовки.
  * Используется на странице товара и в каталоге.
  */

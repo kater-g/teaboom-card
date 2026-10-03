@@ -137,24 +137,7 @@ function renderCartZone(variantId) {
 }
 
 function handleCartClick(event) {
-  if (!(event.target instanceof Element)) return;
-
-  const decrease = event.target.closest("[data-cart-count-decrease]");
-  const increase = event.target.closest("[data-cart-count-increase]");
-  const cartBtn = event.target.closest("[data-cart-btn]");
-
-  if (!decrease && !increase && !cartBtn) return;
-
-  const qty = getQty(currentVariantId);
-
-  if (decrease) {
-    setQty(currentVariantId, qty - 1);
-    renderCartZone(currentVariantId);
-  } else if (increase) {
-    setQty(currentVariantId, qty + 1);
-    renderCartZone(currentVariantId);
-  } else if (cartBtn) {
-    setQty(currentVariantId, qty > 0 ? 0 : 1);
+  if (applyCartAction(event.target, currentVariantId)) {
     renderCartZone(currentVariantId);
   }
 }

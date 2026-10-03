@@ -79,29 +79,9 @@ class ProductCard {
   }
 
   handleCartClick(event) {
-    if (!(event.target instanceof Element)) return;
-
-    const decrease = event.target.closest("[data-cart-count-decrease]");
-    const increase = event.target.closest("[data-cart-count-increase]");
-    const cartBtn = event.target.closest("[data-cart-btn]");
-
-    if (!decrease && !increase && !cartBtn) return;
-
-    // Останавливает всплытие, чтобы клик не сработал как переход по ссылке
-    event.preventDefault();
-    event.stopPropagation();
-
-    const qty = getQty(this.currentVariantId);
-
-    if (decrease) {
-      setQty(this.currentVariantId, qty - 1);
-    } else if (increase) {
-      setQty(this.currentVariantId, qty + 1);
-    } else if (cartBtn) {
-      setQty(this.currentVariantId, qty > 0 ? 0 : 1);
+    if (applyCartAction(event.target, this.currentVariantId)) {
+      this.renderCartZone();
     }
-
-    this.renderCartZone();
   }
 
   handleVariantChange(event) {
