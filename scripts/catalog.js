@@ -95,6 +95,23 @@ class ProductCard {
 }
 
 /*
+ * Сколько карточек показывать за один раз.
+ */
+const PRODUCTS_PER_PAGE = 6;
+
+/*
+ * Товары, которые можно показать: нужна хотя бы одна фасовка.
+ */
+const catalogProducts = products.filter(
+  (product) => Array.isArray(product.variants) && product.variants.length > 0,
+);
+
+/*
+ * Сколько карточек уже показано.
+ */
+let displayedCount = 0;
+
+/*
  * Рендерит HTML одной компактной карточки товара.
  */
 function renderProductCard(product) {
@@ -166,22 +183,61 @@ function renderProductCard(product) {
 }
 
 /*
+ * Добавляет следующую порцию карточек в конец списка.
+ */
+function renderMoreProducts() {
+  const container = document.querySelector("[data-products-container]");
+  if (!container) return;
+
+  const nextSlice = catalogProducts.slice(
+    displayedCount,
+    displayedCount + PRODUCTS_PER_PAGE,
+  );
+
+  if (nextSlice.length === 0) return;
+
+  const fragment = document.createDocumentFragment();
+
+  nextSlice.forEach((product) => {
+    const template = document.createElement("template");
+    template.innerHTML = renderProductCard(product).trim();
+
+    const cardElement = template.content.firstElementChild;
+
+    new ProductCard(cardElement, product);
+    fragment.appendChild(cardElement);
+  });
+
+  container.appendChild(fragment);
+  displayedCount += nextSlice.length;
+
+  updateLoadMoreButton();
+}
+
+/*
+ * Скрывает кнопку, когда показаны все товары.
+ */
+function updateLoadMoreButton() {
+  const btn = document.querySelector("[data-load-more-btn]");
+  if (!btn) return;
+
+  btn.hidden = displayedCount >= catalogProducts.length;
+}
+
+/*
  * Инициализация каталога: рендерит карточки и создаёт экземпляры ProductCard.
  */
 function initCatalog() {
   const container = document.querySelector("[data-products-container]");
+  const btn = document.querySelector("[data-load-more-btn]");
   if (!container) return;
 
-  container.innerHTML = products.map(renderProductCard).join("");
+  displayedCount = 0;
+  container.innerHTML = "";
 
-  const cardElements = container.querySelectorAll("[data-product-id]");
-  cardElements.forEach((cardElement) => {
-    const productId = Number(cardElement.dataset.productId);
-    const product = products.find((p) => p.id === productId);
-    if (product) {
-      new ProductCard(cardElement, product);
-    }
-  });
+  renderMoreProducts();
+
+  if (btn) btn.addEventListener("click", renderMoreProducts);
 }
 
 if (document.readyState === "loading") {
