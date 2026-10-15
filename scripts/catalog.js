@@ -114,9 +114,11 @@ let displayedCount = 0;
 /*
  * Рендерит HTML одной компактной карточки товара.
  */
-function renderProductCard(product) {
+function renderProductCard(product, globalIndex) {
   const firstVariant = product.variants[0];
   const price = formatPrice(firstVariant.price);
+
+  const loadingStrategy = globalIndex < 4 ? "eager" : "lazy"
 
   return `
     <li class="cards-catalog__item product-card product-card--compact" data-product-id="${product.id}">
@@ -126,6 +128,8 @@ function renderProductCard(product) {
             src="${product.image}"
             alt="${product.imageAlt}"
             class="product-card__image product-card__compact-image"
+            loading="${loadingStrategy}"
+            decoding="async"
           >
           <h2 class="product-card__compact-title">${product.title}</h2>
         </a>
@@ -198,9 +202,11 @@ function renderMoreProducts() {
 
   const fragment = document.createDocumentFragment();
 
-  nextSlice.forEach((product) => {
+  nextSlice.forEach((product, index) => {
+    const globalIndex = displayedCount + index;
+
     const template = document.createElement("template");
-    template.innerHTML = renderProductCard(product).trim();
+    template.innerHTML = renderProductCard(product, globalIndex).trim();
 
     const cardElement = template.content.firstElementChild;
 
