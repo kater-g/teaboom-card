@@ -19,8 +19,17 @@
   <main class="page">
     <section class="cards-catalog">
       <aside class="cards-catalog__filters" aria-label="Фильтры товаров">
-        <div class="catalog-filters">
-          <h2 class="catalog-filters__title">Фильтры</h2>
+        <button class="catalog-filters__toggle" type="button" data-filters-toggle aria-expanded="false"
+          aria-controls="filters-panel">
+          Фильтры
+          <svg class="catalog-filters__toggle-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"
+            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </button>
+        <div class="catalog-filters" id="filters-panel"  hidden>
+          <h2 class="catalog-filters__title">Параметры фильтрации</h2>
 
           <form class="catalog-filters__form" data-filters-form>
             <fieldset class="catalog-filters__group">
@@ -109,6 +118,7 @@
   <script src="data/products.js"></script>
   <script src="scripts/shared.js"></script>
   <script src="scripts/catalog.js"></script>
+  <script src="scripts/filters.js"></script>
 </body>
 
 </html>
