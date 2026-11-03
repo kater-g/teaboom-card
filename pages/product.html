@@ -14,8 +14,8 @@
       href="https://fonts.googleapis.com/css2?family=Zen+Antique&display=swap"
       rel="stylesheet"
     >
-    <link rel="icon" href="assets/favicon.svg" >
-    <link rel="stylesheet" href="styles/main.css" >
+    <link rel="icon" href="../assets/favicon.svg" >
+    <link rel="stylesheet" href="../styles/main.css" >
   </head>
   <body>
     <main class="page">
@@ -23,25 +23,24 @@
         class="product-card"
         itemscope
         itemtype="https://schema.org/Product"
-        data-product-id="1"
+        data-product-card
       >
-        <h1 class="product-card__title" itemprop="name">Ананасовый улун</h1>
+        <h1 class="product-card__title" itemprop="name" data-product-title></h1>
 
         <div class="product-card__layout">
           <figure class="product-card__media">
             <img
               class="product-card__image"
-              src="assets/pineapple_ulun.jpg"
-              alt="Ананасовый улун — китайский ароматизированный чай"
               itemprop="image"
               width="600"
               height="600"
+              data-product-image
             >
           </figure>
 
           <div class="product-card__info">
-            <a class="product-card__category" href="#" itemprop="category">
-              Улун
+            <div class="product-card__info">
+            <a class="product-card__category" href="#" itemprop="category" data-product-category>
             </a>
 
             <fieldset class="product-card__variants">
@@ -169,23 +168,13 @@
           </div>
         </div>
 
-        <div class="product-card__description" itemprop="description">
+        <div class="product-card__description" itemprop="description" data-product-description>
           <h2 class="product-card__description-title">О товаре</h2>
-          <p>
-            Состав: китайский бирюзовый чай, цукаты, натуральные ароматические
-            масла.
-          </p>
-          <p>
-            Светлый Фуцзяньский улун с ароматом ананаса. В сухом виде — красивый
-            крупный лист изумрудного цвета, скруткой листа напоминающий Те Гуань
-            Инь. В прогретой посуде аромат свежей, весенней зелени и спелого
-            ананаса. Скрученный лист медленно раскрывается, отдавая весь свой
-            аромат. Тем, кому пришёлся по вкусу этот чай, может также
-            понравиться <a class="product-card__description-link" href="#">связанный чай «Ананасовый рай»</a>.
-          </p>
         </div>
       </article>
     </main>
-    <script src="scripts/main.js"></script>
+    <script src="../data/products.js"></script>
+    <script src="../scripts/shared.js"></script>
+    <script src="../scripts/product.js"></script>
   </body>
 </html>
